@@ -1,6 +1,10 @@
 // 导入mongoose
 const mongoose = require("mongoose");
 
+// 版本报错 "mongoose": "^6.9.2"
+// 设置strictQuery 为true
+mongoose.set("strictQuery", true);
+
 // 连接mongodb 服务
 mongoose.connect("mongodb://127.0.0.1:27017/bilibili");
 
@@ -20,6 +24,6 @@ mongoose.connection.on("close", () => {
 });
 
 // 关闭mongodb
-setTimeout(() => {
-  mongoose.disconnect();
-}, 2000);
+// setTimeout(() => {
+//   mongoose.disconnect();
+// }, 2000);
